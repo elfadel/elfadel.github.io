@@ -1,0 +1,44 @@
+# section information
+section:
+  name: Me
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/my_about.html
+
+author:
+  name: El-Fadel Bonfoh
+
+# your designation
+designation: Computer Science Researcher
+# your company information
+company:
+  name: Orange Labs
+  url: "https://www.orange.com/en"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/resume.pdf"
+
+# a summary about you
+my_summary: 'I am a postdoctoral researcher at [Orange Labs](https://www.orange.com/en). My research interests are Programmables Control and Data planes, P4 language, NFV/SDN, and 5G Network. My current research concerns the acceleration of network packet processing by eBPF/XDP technology in NFV infrastructures.
+          I earned my Ph.D. in Telecommunication and Computer Science at [INSA-Toulouse](https://www.insa-toulouse.fr/fr/index.html), under the supervision of [Christophe Chassot](https://homepages.laas.fr/chassot/pmwiki/pmwiki.php) and [Samir Medjiah](https://www.laas.fr/public/annuaire?userid=18283). During my Ph.D., I was affiliated with [LAAS-CNRS](https://www.laas.fr/public/en) and have worked on a stable software architecture for conception, implementation, and deployment of Internet communication protocols.'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "bonfohelfadel@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/elfadel"
+
+- name: Linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/el-fadel-bonfoh-864688156"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "https://twitter.com/ElFadel_Bonfoh"

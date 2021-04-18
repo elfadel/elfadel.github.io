@@ -1,0 +1,23 @@
+# some information about you
+name: "El-Fadel Bonfoh"
+nickname: "El-Fadel"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+#image: "images/author.jpg"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "bonfohelfadel@gmail.com"
+  #phone: "+0123456789"
+
+# some summary about what you do
+summary:
+  - I am a Computer Science Engineer and Researcher
+  - In 2020, I completed my Ph.D. research at LAAS-CNRS
+  - Currently, I am doing postdoctoral research at Orange Labs Network
+  - My research interests cover 
+  - Internet Communication Protocols
+  - Programmables Control and Data planes
+  - NFV/SDN and 5G Network Functions
+  - Distributed Systems
+  - Linux networking and programming
+  
