@@ -24,7 +24,7 @@ projects:
 - name: Virtual Transport Layer (VTL)
   #logo: /images/sections/projects/tensorflow.png
   role: Principal Developer
-  timeline: "Oct 2017 - Dec 2020"
+  timeline: "2017 - 2020"
   repo: https://github.com/elfadel/vtl
   url: "https://vtl-project.net/"
   summary: Virtual Transport Layer is a protocol deployment management system. VTL is based on combination of XDP and TC Linux subsystems, part of eBPF infrastructure.
