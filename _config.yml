@@ -9,8 +9,9 @@ github_username:  elfadel
 twitter_username: ElFadel_Bonfoh
 
 # Build settings
-# theme: minima
-theme: jekyll-theme-so-simple
+theme: minima
+#theme: jekyll-theme-so-simple
+#remote_theme: "mmistakes/so-simple-theme@3.2.0"
 plugins:
   - jekyll-feed
 
