@@ -9,11 +9,20 @@ github_username:  elfadel
 twitter_username: ElFadel_Bonfoh
 
 # Build settings
-theme: minima
-#theme: jekyll-theme-so-simple
-#remote_theme: "mmistakes/so-simple-theme@3.2.0"
+# theme: minima
+
+remote_theme: chesterhow/tale
+
+permalink:    /:year-:month-:day/:title
+paginate:     5
+
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-remote-theme
+
+plugins:
+  - jekyll-paginate
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
