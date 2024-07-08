@@ -1,28 +1,38 @@
 title: El-Fadel's Blog
-email: bonfohelfadel@gmail.com
+# email: bonfohelfadel@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   My blog posts.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://elfadel.github.io"
 linkedin_username: elfadel
-github_username:  elfadel
-twitter_username: ElFadel_Bonfoh
+# github_username:  elfadel
+# twitter_username: ElFadel_Bonfoh
+
+author:
+  name:       El-Fadel Bonfoh
+  url:        https::/elfadel.github.io
+  email:      bonfohelfadel@gmail.com
 
 # Build settings
-# theme: minima
+markdown:     kramdown
+include:
+  - _pages
+# remote_theme: chesterhow/tale
 
-remote_theme: chesterhow/tale
+# Assets
+sass:
+  sass_dir:   _sass
+  style:      compressed
 
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  #- jekyll-remote-theme
+
+# Permalinks
 permalink:    /:year-:month-:day/:title
 paginate:     5
-
-plugins:
-  - jekyll-paginate
-  - jekyll-remote-theme
-
-plugins:
-  - jekyll-paginate
-  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -32,14 +42,17 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
+  - Gemfile
+  - Gemfile.lock
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Comments with Disqus
+disqus: https-elfadel-github-io
