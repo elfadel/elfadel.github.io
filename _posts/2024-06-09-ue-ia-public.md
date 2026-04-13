@@ -1,10 +1,9 @@
 ---
-layout: post
-comments: true
-title:  "L'UE et l'I.A."
-author: "El-Fadel B."
-tags: 	ia
-date:   2024-06-09 21:51:35 +0200
+title: "L'UE et l'I.A."
+description: "Un tour d'horizon des projets de recherche phares en intelligence artificielle financés par l'Union européenne."
+type: "Analyse"
+tags: [IA, Union européenne, Recherche]
+date: 2024-06-09
 ---
 Il y a quelques mois, l'Union Européenne a légiféré sur l'intelligence artificielle et s'en est hardiment félicité. Qualifiant cette législation, de première mondiale, d'unique au monde. Ce choix de communication a fait dire à un célèbre éditorialiste radio et télé, je cite, “lorsque l'Amérique innove, la Chine copie, puis l'Europe réglemente”. Un autre n'a pas hésité à qualifier l'Europe de “sans vision” sur la question de l'I.A. Sans chercher à prendre parti sur le sujet, on peut légitimement se poser la question de savoir ce que fait l'Europe sur l'I.A. à part légiférer? Sa contribution sur cette révolution technologique se limite-t-elle à pondre des lois et des normes? En y regardant de près, on se rend compte que malgré tout l'UE et l'I.A., c'est plus de 1000 projets de recherche financés pour près de 1,7 Mds d'euros sur une dizaine d'années. Ces projets couvrent plusieurs thématiques telles que la mobilité, la sécurité, la démocratie, la santé, l'environnement, ou encore l'éducation. Dans cet article, je vous propose de balayer quelques-uns de ces projets de recherche sur l'intelligence artificielle financés par l'UE.
 

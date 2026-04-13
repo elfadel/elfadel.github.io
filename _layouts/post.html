@@ -2,38 +2,33 @@
 layout: default
 ---
 
-<div class="post">
-  <div class="post-info">
-    <span>Written by</span>
-    {% if page.author %}
-        {{ page.author }}
-    {% else %}
-        {{ site.author.name }}
-    {% endif %}
-
-    {% if page.date %}
-      <br>
-      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+<div class="container-narrow">
+  <div class="article-header">
+    <a class="back-link" href="{{ '/' | relative_url }}#writing">&larr; Retour aux publications</a>
+    <div class="article-meta">{{ page.type | default: page.date | date: "%B %Y" }}</div>
+    <h1>{{ page.title }}</h1>
+    <p class="article-intro">{{ page.description }}</p>
+    {% if page.tags.size > 0 %}
+    <div class="tag-list">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
     {% endif %}
   </div>
 
-  <h1 class="post-title">{{ page.title }}</h1>
-  <div class="post-line"></div>
+  <article class="article-body">
+    {{ content }}
+  </article>
 
-  {{ content }}
-</div>
-
-{% if page.comments %}
-  {% include disqus_comments.html %}
-{% endif %}
-
-<div class="pagination">
-  {% if page.next.url %}
-    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if page.previous.url %}
-    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-  {% endif %}
-
-  <a href="#" class="top">Top</a>
+  <div class="post-nav">
+    {% if page.previous.url %}
+    <a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | truncate: 50 }}</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+    {% if page.next.url %}
+    <a href="{{ page.next.url | relative_url }}">{{ page.next.title | truncate: 50 }} &rarr;</a>
+    {% endif %}
+  </div>
 </div>

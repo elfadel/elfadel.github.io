@@ -1,10 +1,9 @@
 ---
-layout: post
-comments: true
-title:  "Les acteurs émergents de l'IA générative en Europe"
-author: "El-Fadel B."
-tags: 	ia
-date:   2024-07-31 00:00:00 +0200
+title: "Les acteurs émergents de l'IA générative en Europe"
+description: "Mistral AI, Kyutai/Moshi, Aleph Alpha : panorama des initiatives européennes en IA générative."
+type: "Analyse"
+tags: [IA, Open Source, Europe]
+date: 2024-07-31
 ---
 ### L’IA générative en un coup d’œil
 Une IA générative est une famille d’IA capable de générer de nouveaux contenus tels que des textes, des images, du son, etc. L’IA générative repose sur un ensemble d’outils dont les modèles d’apprentissage profond (Deep Learning) qui utilisent les **réseaux neuronaux**. Un réseau neuronal est caractérisé par plusieurs éléments, dont ses **paramètres** qui sont des valeurs numériques qui conditionnent le comportement, la complexité, et la qualité des résultats fournis par le modèle. Ainsi donc, les paramètres, le choix de leurs valeurs, ainsi que le processus qui conduit à trouver les valeurs appropriées,  sont aussi importants que le **code** des algorithmes. Aujourd’hui, il n’y a pas de consensus entre les principales parties prenantes de l’IA sur la définition exacte de la notion de “Open Source” dans le domaine de l’IA [1]. Néanmoins, il est largement convenu de qualifier de “**Open Weights**” un modèle dont seuls les paramètres sont libres d’accès et de “**Open Source**” un modèle dont et les paramètres, et le code sont libres d’accès. C’est cette terminologie que nous retiendrons dans le cadre de cet article.

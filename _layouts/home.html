@@ -2,25 +2,305 @@
 layout: default
 ---
 
-<div class="catalogue">
-  {% for post in site.posts %}
-    {% if post.sticky %}
-      {% include catalogue_item.html sticky='true' %}
-    {% endif %}
-  {% endfor %}
+<div id="top" class="container">
 
-  {% for post in paginator.posts %}
-    {% include catalogue_item.html %}
-  {% endfor %}
-</div>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-copy reveal visible">
+      <div class="eyebrow">Architecte DevOps · Cloud · DevSecOps · Kubernetes</div>
+      <h1>Je conçois des <span>plateformes de livraison</span> fiables pour des environnements exigeants.</h1>
+      <p>
+        Je suis <strong>El-Fadel Bonfoh</strong>, Architecte DevOps avec plus de dix ans d'expérience en cloud,
+        CI/CD, observabilité, automatisation et environnements télécom. J'interviens sur la conception des plateformes,
+        la gouvernance logicielle et la mise à l'échelle des pratiques DevSecOps.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#writing">Voir les publications</a>
+        <a class="ghost-button" href="{{ '/assets/CV_Bonfoh.pdf' | relative_url }}" target="_blank" rel="noopener">Télécharger le CV</a>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-pill">AWS Certified DevOps Engineer - Professional</span>
+        <span class="meta-pill">PMP</span>
+        <span class="meta-pill">PhD + Ingénieur d'État</span>
+        <span class="meta-pill">France · Anglais technique courant</span>
+        <span class="meta-pill">Plateformes cloud critiques</span>
+      </div>
+    </div>
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-  {% endif %}
+    <aside class="hero-card reveal">
+      <div class="system-window">
+        <div class="window-top">
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+        </div>
+        <div class="terminal-line"><span class="prompt">$</span><span>role</span><span class="value">Architecte DevOps</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>focus</span><span class="comment">CI/CD, Kubernetes, AWS, DevSecOps, Observabilité</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>domains</span><span class="comment">cloud critique, données, IA/ML, télécom 4G/5G</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>impact</span><span class="comment">gouvernance de livraison, architecture plateforme, mentoring</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>current</span><span class="value">Dassault Systèmes</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>previous</span><span class="comment">Ericsson · Orange Labs</span></div>
+      </div>
+    </aside>
+  </section>
 
-  <span>{{ paginator.page }}</span>
+  <!-- ===== POSITIONNEMENT ===== -->
+  <section id="positioning" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Positionnement</div>
+        <h2>Un profil senior pour des rôles d'architecture DevOps.</h2>
+      </div>
+      <p>Trois axes définissent mon approche : concevoir des plateformes solides, intégrer la sécurité dès la conception, et structurer les équipes pour délivrer de manière fiable.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <h3>Architecture de plateformes</h3>
+        <p>Conception de pipelines CI/CD, modèles de delivery, garde-fous de sécurité et standards d'ingénierie pour des équipes pluridisciplinaires.</p>
+        <ul>
+          <li>GitLab CI, Jenkins, ArgoCD, FluxCD, Spinnaker</li>
+          <li>Terraform, CloudFormation, Ansible</li>
+          <li>Kubernetes, EKS, OpenShift, Helm</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>DevSecOps pragmatique</h3>
+        <p>La sécurité doit accélérer les livraisons, pas les bloquer. Je structure les contrôles pour qu'ils deviennent auditables, répétables et exploitables par les équipes.</p>
+        <ul>
+          <li>Scanning, SAST, secrets, supply chain</li>
+          <li>Traçabilité des artefacts et gouvernance</li>
+          <li>Observabilité et remédiation continue</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Rigueur technique et leadership</h3>
+        <p>Formation doctorale, culture produit, capacité à arbitrer et à accompagner des sujets complexes dans des contextes industriels et internationaux.</p>
+        <ul>
+          <li>Revue d'architecture</li>
+          <li>Mentorat d'alternants et de stagiaires</li>
+          <li>Coordination transverse avec chefs de projet</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== APERÇU ===== -->
+  <section class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Aperçu</div>
+        <h2>Quelques indicateurs utiles.</h2>
+      </div>
+      <p>Profondeur technique, capacité d'exécution et lisibilité du parcours.</p>
+    </div>
+    <div class="stats-grid">
+      <article class="card reveal">
+        <div class="big-number">10+</div>
+        <h3>Années d'expérience</h3>
+        <p>Cloud, CI/CD, automatisation, réseaux et plateformes logicielles.</p>
+      </article>
+      <article class="card reveal">
+        <div class="big-number">3</div>
+        <h3>Environnements majeurs</h3>
+        <p>Dassault Systèmes, Ericsson et Orange Labs sur des sujets cloud, télécom et gouvernance technique.</p>
+      </article>
+      <article class="card reveal">
+        <div class="big-number">2</div>
+        <h3>Certifications structurantes</h3>
+        <p>AWS DevOps Professional et PMP pour joindre exécution technique et cadre de pilotage.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== EXPÉRIENCE ===== -->
+  <section id="experience" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Expérience</div>
+        <h2>Des contextes où l'architecture doit tenir en production.</h2>
+      </div>
+      <p>Je me positionne sur les rôles où la qualité du pipeline, la fiabilité des environnements et la gouvernance de livraison sont déterminantes.</p>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item reveal">
+        <div class="timeline-period">2025 - aujourd'hui</div>
+        <div>
+          <p class="timeline-role">Architecte DevOps</p>
+          <p class="timeline-company">Dassault Systèmes</p>
+          <p>Garant de l'architecture CI/CD et du design de l'infrastructure utilisée par les équipes, avec un accent fort sur la gouvernance de livraison des logiciels.</p>
+          <ul>
+            <li>Validation de conception sur des projets IA/ML et données</li>
+            <li>Mise en place de modèles de delivery cohérents et auditables</li>
+            <li>Encadrement technique d'alternants et de stagiaires</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-period">2022 - 2025</div>
+        <div>
+          <p class="timeline-role">Cloud DevOps Engineer</p>
+          <p class="timeline-company">Ericsson</p>
+          <p>Conception d'architectures cloud et automatisation de solutions télécom avec une forte dimension Kubernetes, serverless et outillage CI/CD.</p>
+          <ul>
+            <li>Architecture d'une application cloud et design d'API REST</li>
+            <li>Automatisation EKS sur AWS via Lambda</li>
+            <li>Pipelines GitLab CI/CD, Jenkins, Flux, Flagger, ArgoCD et Spinnaker</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-period">2021</div>
+        <div>
+          <p class="timeline-role">Ingénieur Recherche et Développement</p>
+          <p class="timeline-company">Orange Labs</p>
+          <p>Travaux sur l'optimisation de performances réseau dans des environnements NFV/Cloud, avec une base solide sur les architectures télécom.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== PROPOSITION DE VALEUR ===== -->
+  <section class="section">
+    <div class="quote reveal">
+      <div>
+        <div class="section-label">Proposition de valeur</div>
+        <blockquote>Je suis le plus utile quand il faut rendre un système de livraison plus robuste, plus lisible et plus défensible techniquement.</blockquote>
+      </div>
+      <aside>
+        <p>Mon profil n'est pas limité à un seul secteur. Il fonctionne particulièrement bien sur les rôles d'Architecte DevOps, Platform Architect, DevSecOps Lead ou Cloud Platform Lead, surtout lorsque l'environnement est critique ou réglementé.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== RÉALISATIONS ===== -->
+  <section id="projects" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Réalisations</div>
+        <h2>Des projets concrets, des résultats mesurables.</h2>
+      </div>
+      <p>Chaque mission a produit des livrables techniques durables. Voici les réalisations les plus représentatives.</p>
+    </div>
+    <div class="grid-2">
+      <article class="card reveal">
+        <h3>Plateforme CI/CD multi-équipes</h3>
+        <p>Conception et déploiement d'une architecture de pipelines standardisée pour plusieurs équipes produit, avec gouvernance de release et traçabilité des artefacts.</p>
+        <ul>
+          <li>GitLab CI, Helm, registre d'artefacts</li>
+          <li>Réduction du temps de livraison de 40 %</li>
+          <li>Modèle adopté par 5+ équipes</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Automatisation EKS serverless</h3>
+        <p>Mise en place d'une infrastructure Kubernetes managée sur AWS avec provisionnement automatisé via Lambda et Terraform, intégrée aux pipelines CI/CD.</p>
+        <ul>
+          <li>EKS, Lambda, Terraform, FluxCD</li>
+          <li>Scaling automatique et self-service</li>
+          <li>Infrastructure as Code complète</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Stack d'observabilité télécom</h3>
+        <p>Déploiement d'une stack de monitoring complète pour des services télécom critiques : métriques, logs, alerting et dashboards opérationnels.</p>
+        <ul>
+          <li>Prometheus, Grafana, ELK</li>
+          <li>Alerting multi-niveaux</li>
+          <li>Dashboards temps réel pour l'exploitation</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Gouvernance DevSecOps</h3>
+        <p>Intégration de contrôles de sécurité automatisés dans les pipelines de livraison : scanning de vulnérabilités, gestion des secrets et audit de conformité.</p>
+        <ul>
+          <li>SAST, SCA, secrets scanning</li>
+          <li>Quality gates bloquants</li>
+          <li>Rapports de conformité automatisés</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS (dynamique via _posts/) ===== -->
+  <section id="writing" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Publications</div>
+        <h2>Des publications pour montrer la profondeur technique.</h2>
+      </div>
+      <p>Analyses, notes d'architecture et retours d'expérience sur les sujets qui définissent un Architecte DevOps senior : delivery, sécurité, Kubernetes, observabilité et gouvernance plateforme.</p>
+    </div>
+    <div class="articles-grid">
+      {% for post in site.posts limit:6 %}
+      <article class="article-card reveal">
+        <div class="article-meta">{{ post.type | default: post.date | date: "%B %Y" }}</div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <div class="tag-list" style="margin-top: 1rem;">
+          {% for tag in post.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <a class="read-link" href="{{ post.url | relative_url }}">Lire l'article &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ===== DOMAINES ===== -->
+  <section class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Domaines d'intervention</div>
+        <h2>Les sujets sur lesquels je crée le plus de valeur.</h2>
+      </div>
+      <p>Je me positionne sur des environnements où il faut faire converger exigence technique, fiabilité opérationnelle et lisibilité organisationnelle.</p>
+    </div>
+    <div class="path-grid">
+      <article class="path-card reveal">
+        <h3>Plateformes cloud et delivery critique</h3>
+        <p>Conception de socles CI/CD, standardisation Kubernetes, quality gates, observabilité et automatisation de bout en bout sur des plateformes à fort enjeu de disponibilité.</p>
+        <ul>
+          <li>Architecture pipeline et gouvernance de release</li>
+          <li>Automatisation IaC, scripts et opérations cloud</li>
+          <li>Standards de sécurité et de qualité exploitables en production</li>
+        </ul>
+      </article>
+      <article class="path-card reveal">
+        <h3>Systèmes connectés, télécom et environnements complexes</h3>
+        <p>Mon expérience cloud se combine à une base solide sur les architectures réseau et télécom, utile pour les contextes où la robustesse de l'infrastructure est déterminante.</p>
+        <ul>
+          <li>4G, 5G, NFV, SDN et environnements hybrides</li>
+          <li>Coordination transverse entre architecture, delivery et exploitation</li>
+          <li>Capacité à porter des standards techniques dans des organisations larges</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="cta-box reveal">
+      <div>
+        <div class="section-label">Contact</div>
+        <h2>Vous recrutez un Architecte DevOps ?</h2>
+        <p>Je suis disponible pour échanger sur des rôles d'architecture plateforme, DevSecOps et cloud, en particulier sur des produits où la fiabilité et la sécurité ne sont pas négociables.</p>
+      </div>
+      <div class="contact-grid">
+        <article class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:bonfohelfadel@gmail.com">bonfohelfadel@gmail.com</a></p>
+        </article>
+        <article class="card">
+          <h3>LinkedIn</h3>
+          <p><a href="https://linkedin.com/in/elfadel" target="_blank" rel="noopener">linkedin.com/in/elfadel</a></p>
+        </article>
+        <article class="card">
+          <h3>Téléphone</h3>
+          <p><a href="tel:+33783158170">+33 7 83 15 81 70</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
 </div>
