@@ -1,3 +1,1121 @@
----
-layout: home
----
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El-Fadel Bonfoh — Architecte DevOps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-deep:    #04070f;
+      --bg-card:    #0b1120;
+      --bg-card2:   #0f1929;
+      --blue:       #2d8cff;
+      --blue-glow:  #2d8cff44;
+      --cyan:       #00d4ff;
+      --cyan-glow:  #00d4ff33;
+      --orange:     #ff6b35;
+      --orange-dim: #ff6b3533;
+      --text:       #e2e8f0;
+      --text-dim:   #8899aa;
+      --border:     #1e2d45;
+      --green:      #22d3a5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── Canvas background ─────────────────────────────────── */
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      background: rgba(4,7,15,.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .95rem;
+      color: var(--cyan);
+      letter-spacing: .05em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff !important;
+      padding: .4rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    /* ── SECTIONS ──────────────────────────────────────────── */
+    section { position: relative; z-index: 1; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 5% 60px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--orange-dim);
+      border: 1px solid var(--orange);
+      color: var(--orange);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+      animation: fadeUp .6s ease both;
+    }
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .hero-name {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      animation: fadeUp .7s .1s ease both;
+    }
+    .hero-name span {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-top: .9rem;
+      animation: fadeUp .7s .2s ease both;
+    }
+    .hero-title strong { color: var(--cyan); font-weight: 600; }
+    .hero-desc {
+      max-width: 640px;
+      margin: 1.6rem auto 0;
+      color: var(--text-dim);
+      font-size: 1rem;
+      animation: fadeUp .7s .3s ease both;
+    }
+    .hero-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+      margin-top: 2.4rem;
+      animation: fadeUp .7s .4s ease both;
+    }
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .5rem 1rem;
+      font-size: .85rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+    .contact-chip:hover { border-color: var(--cyan); transform: translateY(-2px); }
+    .contact-chip svg { color: var(--cyan); flex-shrink: 0; }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      animation: fadeUp .7s .5s ease both;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff;
+      padding: .8rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: opacity .2s, transform .2s;
+      box-shadow: 0 0 24px var(--blue-glow);
+    }
+    .btn-primary:hover { opacity: .9; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: .8rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+    .btn-secondary:hover { border-color: var(--cyan); transform: translateY(-2px); }
+
+    /* ── MATCH SCORE STRIP ─────────────────────────────────── */
+    #match {
+      padding: 3rem 5%;
+      background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-card2) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .match-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .match-stat { animation: fadeUp .5s ease both; }
+    .match-stat:nth-child(2) { animation-delay: .1s; }
+    .match-stat:nth-child(3) { animation-delay: .2s; }
+    .match-stat:nth-child(4) { animation-delay: .3s; }
+    .match-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .match-label {
+      margin-top: .4rem;
+      color: var(--text-dim);
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+
+    /* ── GENERIC SECTION HEADER ────────────────────────────── */
+    .section-wrap { max-width: 1100px; margin: 0 auto; padding: 5rem 5%; }
+    .section-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .section-line {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── WHY ME CARDS ──────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: border-color .25s, transform .25s;
+    }
+    .why-card:hover { border-color: var(--blue); transform: translateY(-4px); }
+    .why-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--cyan);
+    }
+    .why-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .5rem; }
+    .why-card p { color: var(--text-dim); font-size: .9rem; }
+
+    /* ── SKILLS ────────────────────────────────────────────── */
+    #skills { background: var(--bg-card); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .skill-group h3 {
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: .85rem;
+    }
+    .skill-name {
+      font-size: .85rem;
+      font-weight: 500;
+      width: 160px;
+      flex-shrink: 0;
+      color: var(--text);
+    }
+    .skill-bar-bg {
+      flex: 1;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      width: 0;
+      transition: width 1.2s cubic-bezier(.22,.61,.36,1);
+    }
+    .skill-pct {
+      font-size: .75rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dim);
+      width: 32px;
+      text-align: right;
+    }
+
+    /* ── TECH TAGS ─────────────────────────────────────────── */
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+    .tag {
+      font-size: .75rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: .3rem .7rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-deep);
+      color: var(--text-dim);
+      transition: border-color .2s, color .2s;
+    }
+    .tag:hover { border-color: var(--cyan); color: var(--cyan); }
+    .tag.hot { border-color: var(--blue); color: var(--blue); }
+
+    /* ── EXPERIENCE TIMELINE ───────────────────────────────── */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--blue), var(--cyan) 60%, transparent);
+    }
+    .tl-item {
+      display: flex;
+      gap: 1.8rem;
+      padding-bottom: 2.8rem;
+      position: relative;
+    }
+    .tl-dot {
+      width: 46px;
+      height: 46px;
+      background: var(--bg-card);
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      box-shadow: 0 0 16px var(--blue-glow);
+      z-index: 1;
+    }
+    .tl-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      flex: 1;
+      transition: border-color .2s;
+    }
+    .tl-content:hover { border-color: var(--blue); }
+    .tl-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: .8rem;
+    }
+    .tl-company { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .tl-role { font-size: .9rem; color: var(--cyan); font-weight: 500; margin-top: .15rem; }
+    .tl-period {
+      font-size: .78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dim);
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      padding: .25rem .6rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .tl-list {
+      list-style: none;
+      margin-top: .6rem;
+    }
+    .tl-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: .88rem;
+      color: var(--text-dim);
+      margin-bottom: .4rem;
+    }
+    .tl-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+    }
+
+    /* ── EDUCATION ─────────────────────────────────────────── */
+    #education { background: var(--bg-card); }
+    .edu-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.4rem;
+      max-width: 700px;
+      transition: border-color .2s, transform .2s;
+    }
+    .edu-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+    .edu-icon {
+      width: 52px; height: 52px;
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+    .edu-school { font-size: 1.05rem; font-weight: 700; }
+    .edu-degree { font-size: .9rem; color: var(--cyan); margin-top: .2rem; }
+    .edu-year { font-size: .8rem; color: var(--text-dim); margin-top: .4rem; }
+
+    /* ── CERTIFICATIONS ────────────────────────────────────── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.4rem;
+    }
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .cert-card:hover { border-color: var(--orange); transform: translateY(-3px); }
+    .cert-badge {
+      width: 48px; height: 48px;
+      background: var(--orange-dim);
+      border: 1px solid var(--orange);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .cert-name { font-size: .92rem; font-weight: 600; }
+    .cert-issuer { font-size: .8rem; color: var(--text-dim); margin-top: .15rem; }
+
+    /* ── AIRBUS FIT ────────────────────────────────────────── */
+    #fit { background: var(--bg-card2); }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .fit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      padding: 1rem 1.2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: .87rem;
+      transition: border-color .2s;
+    }
+    .fit-item:hover { border-color: var(--green); }
+    .fit-check {
+      color: var(--green);
+      font-size: 1rem;
+      margin-top: .05rem;
+      flex-shrink: 0;
+    }
+    .fit-item strong { display: block; font-weight: 600; margin-bottom: .15rem; }
+    .fit-item span { color: var(--text-dim); }
+
+    /* ── CONTACT ───────────────────────────────────────────── */
+    #contact { text-align: center; }
+    .contact-big {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .contact-big span {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .contact-sub { color: var(--text-dim); max-width: 500px; margin: 0 auto 2.5rem; }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.8rem;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, opacity .2s;
+    }
+    .contact-btn:hover { transform: translateY(-3px); opacity: .9; }
+    .cb-email {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff;
+      box-shadow: 0 0 20px var(--blue-glow);
+    }
+    .cb-li {
+      background: #0a66c2;
+      color: #fff;
+    }
+    .cb-tel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 5%;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: .8rem;
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+
+    /* ── ANIMATIONS ────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .timeline::before { left: 16px; }
+      .tl-dot { width: 34px; height: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background canvas -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- ─────────── NAV ─────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">&lt;elfadel /&gt;</a>
+  <ul class="nav-links">
+    <li><a href="#why">Atouts</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#education">Formation</a></li>
+    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+</nav>
+
+<!-- ─────────── HERO ─────────── -->
+<section id="hero">
+  <div class="hero-badge">
+    <!-- plane icon -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
+    </svg>
+    Candidature — Architecte DevOps Airbus Defence &amp; Space
+  </div>
+
+  <h1 class="hero-name">El-Fadel <span>Bonfoh</span></h1>
+  <p class="hero-title">Architecte DevOps &nbsp;·&nbsp; <strong>+10 ans d'expérience</strong> &nbsp;·&nbsp; PhD / Ingénieur d'État</p>
+  <p class="hero-desc">
+    Spécialisé dans la conception d'architectures CI/CD sur des environnements cloud critiques,
+    je combine une expertise technique pointue en DevSecOps, Kubernetes et Infrastructure-as-Code
+    avec une rigueur scientifique issue d'un double cursus doctorat &amp; ingénieur.
+  </p>
+
+  <div class="hero-contacts">
+    <a class="contact-chip" href="mailto:bonfohelfadel@gmail.com">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      bonfohelfadel@gmail.com
+    </a>
+    <a class="contact-chip" href="https://linkedin.com/in/elfadel" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      linkedin.com/in/elfadel
+    </a>
+    <a class="contact-chip" href="tel:+33783158170">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.22 5.18 2 2 0 012.18 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.22 6.22l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+      +33 7 83 15 81 70
+    </a>
+    <a class="contact-chip" href="https://elfadel.github.io" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      elfadel.github.io
+    </a>
+  </div>
+
+  <div class="hero-cta">
+    <a href="mailto:bonfohelfadel@gmail.com" class="btn-primary">✉ Postuler maintenant</a>
+    <a href="https://linkedin.com/in/elfadel" class="btn-secondary" target="_blank" rel="noopener">Voir mon profil LinkedIn</a>
+  </div>
+</section>
+
+<!-- ─────────── MATCH STRIP ─────────── -->
+<section id="match">
+  <div class="match-inner">
+    <div class="match-stat reveal">
+      <div class="match-number" data-target="10">0</div>
+      <div class="match-label">Années d'expérience tech</div>
+    </div>
+    <div class="match-stat reveal">
+      <div class="match-number" data-target="95">0<span>%</span></div>
+      <div class="match-label">Couverture du profil requis</div>
+    </div>
+    <div class="match-stat reveal">
+      <div class="match-number" data-target="2">0</div>
+      <div class="match-label">Certifications professionnelles</div>
+    </div>
+    <div class="match-stat reveal">
+      <div class="match-number" data-target="3">0</div>
+      <div class="match-label">Postes d'architecture CI/CD</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── WHY ME ─────────── -->
+<section id="why">
+  <div class="section-wrap">
+    <span class="section-tag">// Profil ciblé</span>
+    <h2 class="section-title">Pourquoi je suis le bon choix</h2>
+    <div class="section-line"></div>
+    <div class="why-grid">
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Architecte CI/CD confirmé</h3>
+        <p>Chez Dassault Systèmes et Ericsson, j'ai défini et mis en œuvre des architectures de pipelines CI/CD end-to-end (GitLab CI, Jenkins, ArgoCD, FluxCD) dans des contextes industriels exigeants.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>DevSecOps &amp; Qualité logicielle</h3>
+        <p>Implémentation de la sécurité dans le cycle de livraison : scanning d'images, secrets management, SAST, gouvernance auditable des artefacts — aligné sur les standards Mission Critical.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3>Cloud &amp; Réseaux mobiles</h3>
+        <p>Expertise AWS (EKS, Lambda, serverless) couplée à une solide connaissance des réseaux 4G/5G issue d'Orange Labs et d'Ericsson — un atout rare pour les solutions Mission Critical broadband.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Formation d'excellence</h3>
+        <p>Docteur-Ingénieur d'État (INSA Toulouse) avec double compétence rigueur scientifique + pratique industrie. AWS Certified DevOps Engineer Professional &amp; PMP certifié.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Leadership &amp; Encadrement</h3>
+        <p>Animation de discussions techniques avec les chefs de projet, encadrement d'alternants et stagiaires, contributions aux standards DevOps de l'équipe. Je suis habitué à piloter dans des contextes internationaux.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Nationalité française &amp; habilitation</h3>
+        <p>Citoyen français, disponible pour les procédures d'habilitation de sécurité requises par l'Instruction Interministérielle 901 pour les projets de sécurité publique d'Airbus DS.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SKILLS ─────────── -->
+<section id="skills">
+  <div class="section-wrap">
+    <span class="section-tag">// Stack technique</span>
+    <h2 class="section-title">Compétences clés</h2>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+
+      <div class="skill-group reveal">
+        <h3>Conteneurisation &amp; Orchestration</h3>
+        <div class="skill-row"><span class="skill-name">Kubernetes / Helm</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="92"></div></div><span class="skill-pct">92%</span></div>
+        <div class="skill-row"><span class="skill-name">Docker / Podman</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95"></div></div><span class="skill-pct">95%</span></div>
+        <div class="skill-row"><span class="skill-name">Docker Swarm</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+        <div class="skill-row"><span class="skill-name">OpenShift</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div><span class="skill-pct">75%</span></div>
+        <div class="tech-tags">
+          <span class="tag hot">k3s</span><span class="tag hot">Rancher</span><span class="tag">EKS</span><span class="tag">AKS</span><span class="tag">GKE</span><span class="tag">LXC</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>CI/CD &amp; Infrastructure as Code</h3>
+        <div class="skill-row"><span class="skill-name">GitLab CI/CD</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95"></div></div><span class="skill-pct">95%</span></div>
+        <div class="skill-row"><span class="skill-name">Jenkins</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div><span class="skill-pct">88%</span></div>
+        <div class="skill-row"><span class="skill-name">Terraform / OpenTofu</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+        <div class="skill-row"><span class="skill-name">Ansible</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82"></div></div><span class="skill-pct">82%</span></div>
+        <div class="tech-tags">
+          <span class="tag hot">ArgoCD</span><span class="tag hot">FluxCD</span><span class="tag">Spinnaker</span><span class="tag">Flagger</span><span class="tag">Canary</span><span class="tag">Blue-Green</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>DevSecOps &amp; Qualité</h3>
+        <div class="skill-row"><span class="skill-name">SonarQube / SAST</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+        <div class="skill-row"><span class="skill-name">HashiCorp Vault</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="78"></div></div><span class="skill-pct">78%</span></div>
+        <div class="skill-row"><span class="skill-name">Scanning (Trivy/Snyk)</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+        <div class="skill-row"><span class="skill-name">SBOM / SLSA</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="72"></div></div><span class="skill-pct">72%</span></div>
+        <div class="tech-tags">
+          <span class="tag hot">mTLS</span><span class="tag hot">JWT</span><span class="tag">Hadolint</span><span class="tag">TFlint</span><span class="tag">Ruff</span><span class="tag">ESLint</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>Cloud &amp; Observabilité</h3>
+        <div class="skill-row"><span class="skill-name">AWS (EKS, Lambda…)</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90"></div></div><span class="skill-pct">90%</span></div>
+        <div class="skill-row"><span class="skill-name">Prometheus / Grafana</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="87"></div></div><span class="skill-pct">87%</span></div>
+        <div class="skill-row"><span class="skill-name">Loki / ELK</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82"></div></div><span class="skill-pct">82%</span></div>
+        <div class="skill-row"><span class="skill-name">GCP / Azure</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="68"></div></div><span class="skill-pct">68%</span></div>
+        <div class="tech-tags">
+          <span class="tag hot">Istio</span><span class="tag">NGINX</span><span class="tag">Kong</span><span class="tag">Serverless</span><span class="tag">Cloud Run</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>Linux, Automatisation &amp; BDD</h3>
+        <div class="skill-row"><span class="skill-name">Linux</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="96"></div></div><span class="skill-pct">96%</span></div>
+        <div class="skill-row"><span class="skill-name">Python / Bash</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div><span class="skill-pct">88%</span></div>
+        <div class="skill-row"><span class="skill-name">MongoDB (ReplicaSet)</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div><span class="skill-pct">75%</span></div>
+        <div class="skill-row"><span class="skill-name">PostgreSQL</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="72"></div></div><span class="skill-pct">72%</span></div>
+        <div class="tech-tags">
+          <span class="tag hot">Jfrog-CLI</span><span class="tag">Artifactory</span><span class="tag">VMware</span><span class="tag">Proxmox</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>Réseaux &amp; Télécoms</h3>
+        <div class="skill-row"><span class="skill-name">5G / 4G LTE</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+        <div class="skill-row"><span class="skill-name">SDN / NFV</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82"></div></div><span class="skill-pct">82%</span></div>
+        <div class="skill-row"><span class="skill-name">TCP/IP / DNS / DHCP</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90"></div></div><span class="skill-pct">90%</span></div>
+        <div class="skill-row"><span class="skill-name">API Gateway</span><div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+        <div class="tech-tags">
+          <span class="tag hot">Mission Critical</span><span class="tag">WAN/LAN</span><span class="tag">KGateway</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── EXPERIENCE ─────────── -->
+<section id="experience">
+  <div class="section-wrap">
+    <span class="section-tag">// Parcours professionnel</span>
+    <h2 class="section-title">Expérience</h2>
+    <div class="section-line"></div>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-dot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div class="tl-content">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">Dassault Systèmes</div>
+              <div class="tl-role">Architecte DevOps</div>
+            </div>
+            <span class="tl-period">2025 — Présent</span>
+          </div>
+          <ul class="tl-list">
+            <li>Garant de l'architecture CI/CD et du design de l'infrastructure pour les équipes de développement.</li>
+            <li>Mise en place de modèles et d'une gouvernance pour assurer une livraison cohérente et auditable des logiciels (SBOM, artefacts signés, traçabilité).</li>
+            <li>Revue d'architecture et validation de conception pour les projets d'IA/ML et de données.</li>
+            <li>Encadrement technique d'alternants et de stagiaires.</li>
+          </ul>
+          <div class="tech-tags" style="margin-top: 1rem;">
+            <span class="tag">GitLab CI</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">ArgoCD</span><span class="tag">SonarQube</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="tl-content">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">Ericsson</div>
+              <div class="tl-role">Cloud DevOps Engineer (Lead)</div>
+            </div>
+            <span class="tl-period">2022 — 2025</span>
+          </div>
+          <ul class="tl-list">
+            <li>Lead de la conception d'une architecture cloud pour applications distribuées : composants logiciels, API REST, intégration base de données.</li>
+            <li>Développement d'une architecture serverless (Lambda) sur AWS pour automatiser la gestion de clusters EKS.</li>
+            <li>Implémentation et maintien de pipelines CI/CD multi-outils : GitLab CI/CD, Jenkins, Spinnaker, Flux/Flagger, ArgoCD.</li>
+            <li>Monitoring et automatisation de solutions réseaux cloud dans un environnement télécoms 5G international.</li>
+          </ul>
+          <div class="tech-tags" style="margin-top: 1rem;">
+            <span class="tag">AWS EKS</span><span class="tag">Lambda</span><span class="tag">Jenkins</span><span class="tag">FluxCD</span><span class="tag">Spinnaker</span><span class="tag">5G</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="tl-content">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">Orange Labs</div>
+              <div class="tl-role">Ingénieur Recherche &amp; Développement</div>
+            </div>
+            <span class="tl-period">2021</span>
+          </div>
+          <ul class="tl-list">
+            <li>Implémentation d'une solution d'optimisation des performances réseaux pour une infrastructure NFV/Cloud.</li>
+            <li>Recherche appliquée sur l'automatisation et l'orchestration dans des environnements cloud télécoms.</li>
+          </ul>
+          <div class="tech-tags" style="margin-top: 1rem;">
+            <span class="tag">NFV</span><span class="tag">SDN</span><span class="tag">Cloud</span><span class="tag">Linux</span><span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── EDUCATION ─────────── -->
+<section id="education">
+  <div class="section-wrap">
+    <span class="section-tag">// Formation</span>
+    <h2 class="section-title">Diplômes &amp; Certifications</h2>
+    <div class="section-line"></div>
+
+    <div class="edu-card reveal" style="margin-bottom: 2.5rem;">
+      <div class="edu-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div>
+        <div class="edu-school">INSA — Université de Toulouse</div>
+        <div class="edu-degree">Docteur &amp; Ingénieur d'État en Informatique et Télécommunications</div>
+        <div class="edu-year">Double cursus · Toulouse, France</div>
+      </div>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div>
+          <div class="cert-name">AWS Certified DevOps Engineer – Professional</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div>
+          <div class="cert-name">Project Management Professional (PMP)</div>
+          <div class="cert-issuer">Project Management Institute</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── AIRBUS FIT ─────────── -->
+<section id="fit">
+  <div class="section-wrap">
+    <span class="section-tag">// Alignement poste Airbus</span>
+    <h2 class="section-title">Adéquation avec le poste</h2>
+    <div class="section-line"></div>
+    <div class="fit-grid">
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>10+ ans d'expérience</strong><span>Expérience totale couvrant doctrat, R&amp;D et architecture industrie.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Architecture CI/CD</strong><span>Design et garant des pipelines chez Dassault Systèmes et Ericsson.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Kubernetes + Helm</strong><span>Déploiements production sur EKS, OpenShift, clusters on-prem.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>GitLab CI / Jenkins</strong><span>Pipelines multi-stages avec déploiements Canary et Blue-Green.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Terraform / Ansible</strong><span>IaC pour infrastructure cloud AWS et environnements hybrides.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Prometheus / Grafana</strong><span>Mise en place d'observabilité complète avec alerting et dashboards.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>AWS Cloud (EKS, Lambda)</strong><span>Architecture serverless et gestion de clusters Kubernetes managés.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Linux &amp; Automatisation</strong><span>Maîtrise avancée Linux, scripts Python/Bash, Jfrog-CLI.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Réseaux 5G / Mission Critical</strong><span>Background unique chez Ericsson et Orange sur infrastructure télécoms.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Encadrement technique</strong><span>Animation d'équipes, revues d'architecture, mentoring d'alternants.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Anglais technique (B2+)</strong><span>Expérience de travail avec équipes Ericsson en Finlande.</span></div></div>
+      <div class="fit-item reveal"><span class="fit-check">✓</span><div><strong>Nationalité française</strong><span>Éligible aux habilitations sécurité (II 901) pour projets Défense.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── CONTACT ─────────── -->
+<section id="contact">
+  <div class="section-wrap">
+    <h2 class="contact-big">Prêt à rejoindre <span>Airbus DS</span></h2>
+    <p class="contact-sub">Disponible pour un entretien à votre convenance. Mon profil correspond point par point aux exigences du poste d'Architecte DevOps.</p>
+    <div class="contact-links">
+      <a href="mailto:bonfohelfadel@gmail.com" class="contact-btn cb-email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        bonfohelfadel@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/elfadel" class="contact-btn cb-li" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="tel:+33783158170" class="contact-btn cb-tel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.22 5.18 2 2 0 012.18 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.22 6.22l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +33 7 83 15 81 70
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer>
+  <p>© 2026 El-Fadel Bonfoh &nbsp;·&nbsp; <a href="https://elfadel.github.io" target="_blank" rel="noopener">elfadel.github.io</a> &nbsp;·&nbsp; Candidature pour le poste <strong>JR10391579</strong> — Architecte DevOps, Airbus Defence &amp; Space</p>
+</footer>
+
+<!-- ─────────── SCRIPTS ─────────── -->
+<script>
+/* ── Particle / grid background canvas ── */
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.r = Math.random() * 1.5 + .4;
+      this.vx = (Math.random() - .5) * .3;
+      this.vy = (Math.random() - .5) * .3;
+      this.alpha = Math.random() * .5 + .15;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(45,140,255,${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  particles = Array.from({length: 80}, () => new Particle());
+
+  function drawGrid() {
+    ctx.strokeStyle = 'rgba(45,140,255,0.04)';
+    ctx.lineWidth = 1;
+    const spacing = 60;
+    for (let x = 0; x < W; x += spacing) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y < H; y += spacing) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+  }
+
+  function drawConnections() {
+    const maxDist = 140;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < maxDist) {
+          const alpha = (1 - dist / maxDist) * 0.15;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
+          ctx.lineWidth = .6;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    drawGrid();
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawConnections();
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ── Intersection Observer for reveal ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      /* Animate skill bars when in view */
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── Counter animation for match section ── */
+function animateCounter(el, target, suffix) {
+  let start = 0;
+  const duration = 1800;
+  const step = ts => {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const val = Math.floor(progress * target);
+    el.innerHTML = val + (suffix || '');
+    if (progress < 1) requestAnimationFrame(step);
+    else el.innerHTML = target + (suffix || '');
+  };
+  requestAnimationFrame(step);
+}
+
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.match-number').forEach(num => {
+        const raw = num.dataset.target;
+        const hasPct = num.innerHTML.includes('%');
+        animateCounter(num, parseInt(raw), hasPct ? '%' : '+');
+      });
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const matchSection = document.getElementById('match');
+if (matchSection) counterObs.observe(matchSection);
+</script>
+</body>
+</html>
