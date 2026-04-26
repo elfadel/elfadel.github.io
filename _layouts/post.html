@@ -4,7 +4,11 @@ layout: default
 
 <div class="container-narrow">
   <div class="article-header">
+    {% if page.lang == 'en' %}
+    <a class="back-link" href="{{ '/en/' | relative_url }}#writing">&larr; Back to articles</a>
+    {% else %}
     <a class="back-link" href="{{ '/' | relative_url }}#writing">&larr; Retour aux publications</a>
+    {% endif %}
     <div class="article-meta">{{ page.type | default: page.date | date: "%B %Y" }}</div>
     <h1>{{ page.title }}</h1>
     <p class="article-intro">{{ page.description }}</p>
@@ -22,12 +26,12 @@ layout: default
   </article>
 
   <div class="post-nav">
-    {% if page.previous.url %}
+    {% if page.previous.url and page.previous.lang == page.lang %}
     <a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | truncate: 50 }}</a>
     {% else %}
     <span></span>
     {% endif %}
-    {% if page.next.url %}
+    {% if page.next.url and page.next.lang == page.lang %}
     <a href="{{ page.next.url | relative_url }}">{{ page.next.title | truncate: 50 }} &rarr;</a>
     {% endif %}
   </div>

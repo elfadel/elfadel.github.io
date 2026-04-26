@@ -3,16 +3,16 @@ layout: default
 ---
 
 <div id="top" class="container">
+  {% assign fr_posts = site.posts | where_exp: "post", "post.lang != 'en'" %}
 
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-copy reveal visible">
-      <div class="eyebrow">Architecte DevOps · Cloud · DevSecOps · Kubernetes</div>
-      <h1>Un espace de <span>partage technique</span> autour du DevOps et de l'IA.</h1>
+      <div class="eyebrow">Partage DevOps & IA</div>
+      <h1>Des retours de terrain pour <span>mieux concevoir</span> les plateformes logicielles.</h1>
       <p>
-        Ici, je publie des analyses, des retours d'expérience et des notes d'architecture
-        pour aider les équipes à concevoir des plateformes plus fiables, plus lisibles et
-        plus sûres, avec un regard concret sur la production.
+        Ce site documente des décisions d'architecture, des patterns de delivery et des
+        pratiques DevSecOps applicables en production.
       </p>
       <div class="hero-actions">
         <a class="button" href="#writing">Explorer les publications</a>
@@ -36,10 +36,10 @@ layout: default
         </div>
         <div class="terminal-line"><span class="prompt">$</span><span>mission</span><span class="value">Partager des pratiques DevOps utiles</span></div>
         <div class="terminal-line"><span class="prompt">$</span><span>focus</span><span class="comment">CI/CD, Kubernetes, sécurité, observabilité, IA</span></div>
-        <div class="terminal-line"><span class="prompt">$</span><span>format</span><span class="comment">notes, guides, retours terrain</span></div>
-        <div class="terminal-line"><span class="prompt">$</span><span>promise</span><span class="comment">clarté technique + applicabilité immédiate</span></div>
-        <div class="terminal-line"><span class="prompt">$</span><span>audience</span><span class="value">architectes, tech leads, équipes plateforme</span></div>
-        <div class="terminal-line"><span class="prompt">$</span><span>goal</span><span class="comment">outiller les décisions d'architecture</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>methode</span><span class="comment">probleme -> decision -> mise en oeuvre -> resultat</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>format</span><span class="comment">notes d'architecture, guides, cas d'étude</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>public</span><span class="value">architectes, tech leads, equipes plateforme</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>objectif</span><span class="comment">des contenus actionnables et auditables</span></div>
       </div>
     </aside>
   </section>
@@ -51,7 +51,9 @@ layout: default
         <div class="section-label">Positionnement</div>
         <h2>Une ligne éditoriale orientée impact opérationnel.</h2>
       </div>
-      <p>Trois axes structurent les contenus publiés : livrer vite sans sacrifier la qualité, sécuriser sans ralentir, et rendre l'architecture exploitable par les équipes.</p>
+      <p>
+        Trois axes structurent les contenus : fiabilité du delivery, sécurité by design et gouvernance technique mesurable.
+      </p>
     </div>
     <div class="grid-3">
       <article class="card reveal">
@@ -91,11 +93,13 @@ layout: default
         <div class="section-label">Aperçu</div>
         <h2>Repères de contenu.</h2>
       </div>
-      <p>Un contenu pensé pour être actionnable, utile en conception et défendable en revue d'architecture.</p>
+      <p>
+        Des formats pensés pour être actionnables en revue d'architecture, en run et en roadmap plateforme.
+      </p>
     </div>
     <div class="stats-grid">
       <article class="card reveal">
-        <div class="big-number">{{ site.posts.size }}</div>
+        <div class="big-number">{{ fr_posts.size }}</div>
         <h3>Publications</h3>
         <p>Articles techniques disponibles et mis à jour sur le site.</p>
       </article>
@@ -119,7 +123,9 @@ layout: default
         <div class="section-label">Expérience</div>
         <h2>Le terrain qui nourrit les contenus.</h2>
       </div>
-      <p>Les publications s'appuient sur des environnements réels où la fiabilité, la sécurité et la gouvernance de delivery sont non négociables.</p>
+      <p>
+        Les publications s'appuient sur des environnements réels où la fiabilité, la sécurité et la gouvernance de delivery sont non négociables.
+      </p>
     </div>
     <div class="timeline">
       <article class="timeline-item reveal">
@@ -167,7 +173,7 @@ layout: default
         <blockquote>Objectif du site : transformer des sujets complexes en repères concrets, pour aider les équipes à mieux décider.</blockquote>
       </div>
       <aside>
-        <p>Chaque article cherche un équilibre clair : rigueur d'architecture, contraintes de production et applicabilité immédiate pour les équipes techniques.</p>
+        <p>Chaque article suit une structure simple : problème, contraintes, décision d'architecture, mise en oeuvre et résultats observables.</p>
       </aside>
     </div>
   </section>
@@ -176,10 +182,12 @@ layout: default
   <section id="projects" class="section">
     <div class="section-header reveal">
       <div>
-        <div class="section-label">Réalisations</div>
+        <div class="section-label">Cas d'étude</div>
         <h2>Des cas d'étude pour apprendre par l'exemple.</h2>
       </div>
-      <p>Ces retours de projets servent de base aux analyses publiées : architecture, choix techniques, résultats et enseignements transférables.</p>
+      <p>
+        Chaque cas est présenté avec contexte, choix d'architecture, exécution, risques et résultats.
+      </p>
     </div>
     <div class="grid-2">
       <article class="card reveal">
@@ -226,12 +234,14 @@ layout: default
     <div class="section-header reveal">
       <div>
         <div class="section-label">Publications</div>
-        <h2>Ici, je vous invite dans mon jardin numérique.</h2>
+        <h2>Publications techniques</h2>
       </div>
-      <p>Analyses, notes d'architecture et retours d'expérience sur les sujets qui m'animent : delivery, sécurité, Kubernetes, observabilité, données, I.A, et gouvernance plateforme.</p>
+      <p>
+        Analyses, notes d'architecture et retours d'expérience sur les sujets qui m'animent : delivery, sécurité, Kubernetes, observabilité, données, I.A, et gouvernance plateforme.
+      </p>
     </div>
     <div class="articles-grid">
-      {% for post in site.posts limit:6 %}
+      {% for post in fr_posts limit:6 %}
       <article class="article-card reveal">
         <div class="article-meta">{{ post.type | default: post.date | date: "%B %Y" }}</div>
         <h3>{{ post.title }}</h3>
@@ -254,7 +264,9 @@ layout: default
         <div class="section-label">Domaines d'intervention</div>
         <h2>Les sujets explorés dans les contenus.</h2>
       </div>
-      <p>Le fil conducteur : relier architecture, delivery et exploitation pour construire des systèmes fiables et évolutifs.</p>
+      <p>
+        Le fil conducteur : relier architecture, delivery et exploitation pour construire des systèmes fiables et évolutifs.
+      </p>
     </div>
     <div class="path-grid">
       <article class="path-card reveal">
@@ -284,7 +296,9 @@ layout: default
       <div>
         <div class="section-label">Contact</div>
         <h2>Échangeons sur vos enjeux DevOps et IA.</h2>
-        <p>Une question, un retour d'expérience ou un sujet à approfondir ? Je réponds avec plaisir pour enrichir les prochains contenus du site.</p>
+        <p>
+          Une question, un retour d'expérience ou un sujet à approfondir ? Je réponds avec plaisir pour enrichir les prochains contenus du site.
+        </p>
       </div>
       <div class="contact-grid">
         <article class="card">

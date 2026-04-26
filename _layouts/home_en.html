@@ -1,0 +1,297 @@
+---
+layout: default
+lang: en
+---
+
+<div id="top" class="container">
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+
+  <section class="hero">
+    <div class="hero-copy reveal visible">
+      <div class="eyebrow">DevOps & AI Knowledge Hub</div>
+      <h1>Field-driven content to <span>design better</span> software platforms.</h1>
+      <p>
+        This website shares architecture decisions, delivery patterns, and DevSecOps practices
+        that teams can apply in real production environments.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#writing">Explore articles</a>
+        <a class="ghost-button" href="#contact">Pitch a topic</a>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-pill">CI/CD reliability</span>
+        <span class="meta-pill">Kubernetes & Platform Engineering</span>
+        <span class="meta-pill">DevSecOps by design</span>
+        <span class="meta-pill">Observability & SRE</span>
+        <span class="meta-pill">Data and AI in production</span>
+      </div>
+    </div>
+
+    <aside class="hero-card reveal">
+      <div class="system-window">
+        <div class="window-top">
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+        </div>
+        <div class="terminal-line"><span class="prompt">$</span><span>mission</span><span class="value">share useful DevOps practices</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>focus</span><span class="comment">CI/CD, Kubernetes, security, observability, AI</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>method</span><span class="comment">problem -> decision -> implementation -> outcome</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>format</span><span class="comment">architecture notes, guides, case studies</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>audience</span><span class="value">architects, tech leads, platform teams</span></div>
+        <div class="terminal-line"><span class="prompt">$</span><span>goal</span><span class="comment">actionable and auditable content</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="positioning" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Focus</div>
+        <h2>An editorial line built for operational impact.</h2>
+      </div>
+      <p>Three pillars structure the content: delivery reliability, security by design, and measurable technical governance.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <h3>Platform architecture patterns</h3>
+        <p>Decision frameworks, trade-offs, and implementation references for resilient DevOps foundations.</p>
+        <ul>
+          <li>Pipelines, GitOps, release governance</li>
+          <li>Infrastructure as Code and environment standardization</li>
+          <li>Kubernetes, Helm, cloud platform operations</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Pragmatic DevSecOps</h3>
+        <p>Practical ways to embed security in delivery workflows without creating friction.</p>
+        <ul>
+          <li>SAST, SCA, secrets, software supply chain controls</li>
+          <li>Quality gates and artifact traceability</li>
+          <li>Policy enforcement that teams can actually use</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Field notes</h3>
+        <p>Lessons learned from demanding contexts, turned into repeatable engineering guidance.</p>
+        <ul>
+          <li>What works in production and why</li>
+          <li>Frequent mistakes and anti-patterns</li>
+          <li>Decision templates for tech leads</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Overview</div>
+        <h2>Content at a glance.</h2>
+      </div>
+      <p>Built to support architecture reviews, platform roadmaps, and production operations.</p>
+    </div>
+    <div class="stats-grid">
+      <article class="card reveal">
+        <div class="big-number">{{ en_posts.size }}</div>
+        <h3>English articles</h3>
+        <p>Dedicated EN versions available under /en/articles/.</p>
+      </article>
+      <article class="card reveal">
+        <div class="big-number">6</div>
+        <h3>Core topics</h3>
+        <p>Delivery, security, Kubernetes, observability, data, and AI.</p>
+      </article>
+      <article class="card reveal">
+        <div class="big-number">100%</div>
+        <h3>Decision-ready content</h3>
+        <p>Structured to be directly reusable in technical decision-making.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Field Notes</div>
+        <h2>Real contexts behind the articles.</h2>
+      </div>
+      <p>The publications are grounded in environments where reliability, security, and delivery governance are non-negotiable.</p>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item reveal">
+        <div class="timeline-period">2025 - present</div>
+        <div>
+          <p class="timeline-role">DevOps Architect</p>
+          <p class="timeline-company">Dassault Systèmes</p>
+          <p>Architecture ownership for CI/CD and platform design, with a strong focus on software delivery governance.</p>
+          <ul>
+            <li>Architecture reviews for AI/ML and data projects</li>
+            <li>Delivery models designed for consistency and auditability</li>
+            <li>Mentoring interns and junior engineers</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-period">2022 - 2025</div>
+        <div>
+          <p class="timeline-role">Cloud DevOps Engineer</p>
+          <p class="timeline-company">Ericsson</p>
+          <p>Cloud architecture and automation for telecom solutions, with strong Kubernetes, serverless, and CI/CD tooling dimensions.</p>
+          <ul>
+            <li>Cloud application architecture and REST API design</li>
+            <li>AWS EKS automation using Lambda</li>
+            <li>GitLab CI/CD, Jenkins, Flux, Flagger, ArgoCD, Spinnaker</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-period">2021</div>
+        <div>
+          <p class="timeline-role">R&D Engineer</p>
+          <p class="timeline-company">Orange Labs</p>
+          <p>Network performance optimization in NFV/Cloud contexts, backed by a strong telecom architecture foundation.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="quote reveal">
+      <div>
+        <div class="section-label">Value Proposition</div>
+        <blockquote>The goal is simple: turn complex topics into practical references that improve engineering decisions.</blockquote>
+      </div>
+      <aside>
+        <p>Each article follows a clear structure: problem, constraints, architecture decision, implementation details, and observable outcomes.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Case Studies</div>
+        <h2>Learn through concrete implementation stories.</h2>
+      </div>
+      <p>Each case links architecture choices to execution details, risks, and measurable outcomes.</p>
+    </div>
+    <div class="grid-2">
+      <article class="card reveal">
+        <h3>Multi-team CI/CD platform</h3>
+        <p>Designed and deployed a standardized pipeline architecture for multiple product teams, with release governance and artifact traceability.</p>
+        <ul>
+          <li>GitLab CI, Helm, artifact registry</li>
+          <li>40% faster delivery cycle</li>
+          <li>Operating model adopted by 5+ teams</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Serverless EKS automation</h3>
+        <p>Built a managed Kubernetes platform on AWS with automated provisioning through Lambda and Terraform, integrated into CI/CD flows.</p>
+        <ul>
+          <li>EKS, Lambda, Terraform, FluxCD</li>
+          <li>Auto-scaling and self-service operations</li>
+          <li>Full Infrastructure-as-Code coverage</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Telecom observability stack</h3>
+        <p>Implemented end-to-end monitoring for critical telecom services: metrics, logs, alerts, and actionable dashboards.</p>
+        <ul>
+          <li>Prometheus, Grafana, ELK</li>
+          <li>Multi-level alerting strategy</li>
+          <li>Real-time dashboards for operations</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>DevSecOps governance model</h3>
+        <p>Integrated security controls into delivery pipelines: vulnerability scanning, secret management, and compliance reporting.</p>
+        <ul>
+          <li>SAST, SCA, secrets scanning</li>
+          <li>Blocking quality gates for critical risks</li>
+          <li>Automated compliance evidence</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="writing" class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Articles</div>
+        <h2>Technical publications in English.</h2>
+      </div>
+      <p>Architecture notes, analyses, and field feedback on delivery, security, Kubernetes, observability, data, AI, and platform governance.</p>
+    </div>
+    <div class="articles-grid">
+      {% for post in en_posts limit:6 %}
+      <article class="article-card reveal">
+        <div class="article-meta">{{ post.type | default: post.date | date: "%B %Y" }}</div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <div class="tag-list" style="margin-top: 1rem;">
+          {% for tag in post.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <a class="read-link" href="{{ post.url | relative_url }}">Read article &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Focus Areas</div>
+        <h2>The technical themes explored on this site.</h2>
+      </div>
+      <p>Core thread: connect architecture, delivery, and operations to build reliable and scalable systems.</p>
+    </div>
+    <div class="path-grid">
+      <article class="path-card reveal">
+        <h3>Cloud platforms and critical delivery systems</h3>
+        <p>CI/CD foundations, Kubernetes standardization, quality gates, observability, and end-to-end automation for high-availability environments.</p>
+        <ul>
+          <li>Pipeline architecture and release governance</li>
+          <li>IaC automation and cloud operations</li>
+          <li>Security and quality standards that survive production</li>
+        </ul>
+      </article>
+      <article class="path-card reveal">
+        <h3>Connected systems and complex environments</h3>
+        <p>Cloud platform experience combined with telecom and network architecture fundamentals for large-scale hybrid systems.</p>
+        <ul>
+          <li>4G, 5G, NFV, SDN, and hybrid environments</li>
+          <li>Cross-functional alignment across architecture, delivery, and operations</li>
+          <li>Standards adoption across large organizations</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="cta-box reveal">
+      <div>
+        <div class="section-label">Contact</div>
+        <h2>Let's discuss your DevOps and AI challenges.</h2>
+        <p>Have a topic suggestion, a technical question, or a real-world case to dissect? I would be glad to discuss it and turn it into future content.</p>
+      </div>
+      <div class="contact-grid">
+        <article class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:bonfohelfadel@gmail.com">bonfohelfadel@gmail.com</a></p>
+        </article>
+        <article class="card">
+          <h3>LinkedIn</h3>
+          <p><a href="https://linkedin.com/in/elfadel" target="_blank" rel="noopener">linkedin.com/in/elfadel</a></p>
+        </article>
+        <article class="card">
+          <h3>Phone</h3>
+          <p><a href="tel:+33783158170">+33 7 83 15 81 70</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>

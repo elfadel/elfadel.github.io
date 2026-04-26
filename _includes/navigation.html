@@ -1,11 +1,22 @@
 <nav>
   <a class="brand" href="{{ '/' | relative_url }}">el-fadel / architecte devops</a>
   <ul class="nav-links">
+    {% if page.lang == 'en' %}
+    <li><a href="{{ '/en/' | relative_url }}#positioning">Focus</a></li>
+    <li><a href="{{ '/en/' | relative_url }}#experience">Field Notes</a></li>
+    <li><a href="{{ '/en/' | relative_url }}#projects">Case Studies</a></li>
+    <li><a href="{{ '/en/' | relative_url }}#writing">Articles</a></li>
+    <li><a href="{{ '/en/' | relative_url }}#contact">Contact</a></li>
+    <li><a href="{{ '/' | relative_url }}">FR</a></li>
+    <li><a class="nav-accent" href="{{ '/en/' | relative_url }}#contact">Pitch a topic</a></li>
+    {% else %}
     <li><a href="{{ '/' | relative_url }}#positioning">Positionnement</a></li>
     <li><a href="{{ '/' | relative_url }}#experience">Expérience</a></li>
-    <li><a href="{{ '/' | relative_url }}#projects">Réalisations</a></li>
+    <li><a href="{{ '/' | relative_url }}#projects">Cas d'étude</a></li>
     <li><a href="{{ '/' | relative_url }}#writing">Publications</a></li>
     <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
+    <li><a href="{{ '/en/' | relative_url }}">EN</a></li>
     <li><a class="nav-accent" href="{{ '/' | relative_url }}#contact">Proposer un sujet</a></li>
+    {% endif %}
   </ul>
 </nav>
