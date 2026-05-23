@@ -6,6 +6,7 @@ tags: [AI, Europe, Open Weights]
 date: 2024-07-31
 lang: en
 permalink: /en/articles/european-generative-ai-actors
+translation_url: /articles/ue-ia-actors
 ---
 
 Europe’s generative AI landscape is no longer theoretical. Several actors are now shipping models, APIs, and enterprise delivery options with distinct technical and business choices.

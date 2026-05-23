@@ -196,6 +196,17 @@ footer a:hover { color: var(--text-muted); }
   font-weight: 500;
 }
 
+.note-bilingual {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+  opacity: 0.7;
+}
+
 .note-title {
   font-family: var(--font-ui);
   font-size: 1rem;
@@ -240,6 +251,27 @@ footer a:hover { color: var(--text-muted); }
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.lang-switcher {
+  margin-bottom: 2rem;
+}
+
+.lang-switcher a {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.3rem 0.75rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.lang-switcher a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
 }
 
 .article-state {

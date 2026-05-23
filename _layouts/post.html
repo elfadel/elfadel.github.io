@@ -4,6 +4,17 @@ layout: default
 
 <div class="article-header">
   <a class="back-link" href="{{ '/' | relative_url }}">&larr; Notes</a>
+
+  {% if page.translation_url %}
+  <div class="lang-switcher">
+    {% if page.lang == 'en' %}
+    <a href="{{ page.translation_url | relative_url }}">&#127467;&#127479; Lire en français</a>
+    {% else %}
+    <a href="{{ page.translation_url | relative_url }}">&#127468;&#127463; Read in English</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
   <div class="article-meta">
     <span>{{ page.date | date: "%Y-%m-%d" }}</span>
     {% if page.state %}<span class="article-state">{{ page.state }}</span>{% endif %}
@@ -14,9 +25,7 @@ layout: default
   {% endif %}
   {% if page.tags.size > 0 %}
   <div class="tag-list">
-    {% for tag in page.tags %}
-    <span class="tag">{{ tag }}</span>
-    {% endfor %}
+    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
   </div>
   {% endif %}
 </div>
@@ -26,12 +35,25 @@ layout: default
 </article>
 
 <div class="post-nav">
-  {% if page.previous.url %}
-  <a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | truncate: 50 }}</a>
+  {% assign all_fr = site.posts | where_exp: "post", "post.lang != 'en'" %}
+  {% assign current_index = nil %}
+  {% for post in all_fr %}
+    {% if post.url == page.url %}
+      {% assign current_index = forloop.index0 %}
+    {% endif %}
+  {% endfor %}
+  {% if current_index and current_index > 0 %}
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign prev_post = all_fr[prev_index] %}
+    <a href="{{ prev_post.url | relative_url }}">&larr; {{ prev_post.title | truncate: 50 }}</a>
   {% else %}
   <span></span>
   {% endif %}
-  {% if page.next.url %}
-  <a href="{{ page.next.url | relative_url }}">{{ page.next.title | truncate: 50 }} &rarr;</a>
+  {% if current_index != nil %}
+    {% assign next_index = current_index | plus: 1 %}
+    {% assign next_post = all_fr[next_index] %}
+    {% if next_post %}
+    <a href="{{ next_post.url | relative_url }}">{{ next_post.title | truncate: 50 }} &rarr;</a>
+    {% endif %}
   {% endif %}
 </div>

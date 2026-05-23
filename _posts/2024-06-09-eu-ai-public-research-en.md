@@ -6,6 +6,7 @@ tags: [AI, European Union, Research]
 date: 2024-06-09
 lang: en
 permalink: /en/articles/eu-ai-public-research
+translation_url: /articles/ue-ia-public
 ---
 
 Europe is often portrayed as a regulatory power in AI. That view is only partially true. Over the last decade, the European Union has funded more than a thousand AI-related research initiatives across mobility, safety, democracy, healthcare, and environmental resilience.
