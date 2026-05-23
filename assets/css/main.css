@@ -3,15 +3,16 @@
    =================================== */
 
 :root {
-  --bg:           #111111;
-  --surface:      #1a1a1a;
-  --border:       #232323;
-  --text:         #c4c4c4;
-  --text-strong:  #e8e8e8;
-  --text-muted:   #545454;
-  --accent:       #c89040;
-  --font:         system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-mono:    ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+  --bg:           #0e0d0c;
+  --surface:      #181614;
+  --border:       #262218;
+  --text:         #cac4ba;
+  --text-strong:  #eee8de;
+  --text-muted:   #564f45;
+  --accent:       #c4853e;
+  --accent-dim:   rgba(196, 133, 62, 0.12);
+  --font:         'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
 }
 
 /* ===== Reset ===== */
@@ -23,11 +24,12 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 17px;
+  font-size: 16.5px;
   line-height: 1.65;
   max-width: 740px;
   padding: 0 28px;
   -webkit-font-smoothing: antialiased;
+  border-top: 3px solid var(--accent);
 }
 
 a {
@@ -52,20 +54,17 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 0 1.5rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .brand {
   text-decoration: none;
   color: var(--text-strong);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: -0.01em;
 }
 
-.brand:hover {
-  text-decoration: none;
-}
+.brand:hover { text-decoration: none; }
 
 .nav-links {
   display: flex;
@@ -89,7 +88,7 @@ nav {
 
 /* ===== Main ===== */
 main {
-  padding: 3rem 0;
+  padding: 2rem 0;
   min-height: calc(100vh - 200px);
 }
 
@@ -106,40 +105,53 @@ footer a {
   text-decoration: none;
 }
 
-footer a:hover {
-  color: var(--text);
-}
+footer a:hover { color: var(--text); }
 
 /* ===================================
    Homepage
    =================================== */
 
 .home-intro {
-  padding: 3rem 0 2.5rem;
-  color: var(--text-muted);
-  font-size: 1rem;
+  padding: 2rem 0 2.5rem;
   border-bottom: 1px solid var(--border);
 }
 
-.home-intro p { margin: 0; }
+.home-intro .intro-name {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.home-intro .intro-bio {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 520px;
+}
 
 .notes-list-header {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
-  padding: 1.8rem 0 1rem;
+  padding: 2rem 0 0.75rem;
+  font-weight: 600;
 }
 
 .note-row {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 1.5rem;
-  align-items: baseline;
-  padding: 0.9rem 0;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: inherit;
+  transition: background 0.1s;
 }
 
 .note-row:hover .note-title {
@@ -147,29 +159,45 @@ footer a:hover {
 }
 
 .note-date {
-  color: var(--text-muted);
-  font-size: 0.78rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  line-height: 1.65;
+  padding-top: 0.18rem;
+  opacity: 0.8;
 }
 
 .note-content {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .note-title {
   color: var(--text-strong);
-  font-size: 0.97rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   line-height: 1.4;
   transition: color 0.15s;
 }
 
 .note-tags {
-  font-size: 0.74rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.note-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1rem 0.45rem;
 }
 
 /* ===================================
@@ -186,10 +214,11 @@ footer a:hover {
   align-items: center;
   gap: 0.4rem;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-decoration: none;
   margin-bottom: 2.5rem;
   transition: color 0.15s;
+  font-family: var(--font-mono);
 }
 
 .back-link:hover {
@@ -198,26 +227,32 @@ footer a:hover {
 }
 
 .article-meta {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
 }
 
 .article-state {
-  text-transform: lowercase;
-  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .article-header h1 {
-  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   line-height: 1.2;
   color: var(--text-strong);
-  margin: 0 0 1.1rem;
+  margin: 0 0 1rem;
   font-weight: 700;
 }
 
@@ -225,26 +260,30 @@ footer a:hover {
   font-size: 1rem;
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-top: 1.5rem;
 }
 
 .tag {
-  font-size: 0.73rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 3px;
-  padding: 0.15rem 0.5rem;
+  padding: 0.1rem 0.45rem;
   text-decoration: none;
 }
 
-/* ===== Article body (markdown output) ===== */
+/* ===== Article body ===== */
 
 .article-body {
   padding: 2.5rem 0 4rem;
@@ -253,11 +292,10 @@ footer a:hover {
 }
 
 .article-body h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin: 2.5rem 0 0.8rem;
   color: var(--text-strong);
-  letter-spacing: -0.01em;
 }
 
 .article-body h3 {
@@ -286,18 +324,14 @@ footer a:hover {
   color: var(--text);
 }
 
-.article-body li {
-  margin-bottom: 0.5rem;
-}
+.article-body li { margin-bottom: 0.5rem; }
 
 .article-body strong {
   color: var(--text-strong);
   font-weight: 600;
 }
 
-.article-body em {
-  font-style: italic;
-}
+.article-body em { font-style: italic; }
 
 .article-body a {
   color: var(--accent);
@@ -305,15 +339,15 @@ footer a:hover {
   text-underline-offset: 2px;
 }
 
-.article-body a:hover {
-  color: var(--text-strong);
-}
+.article-body a:hover { color: var(--text-strong); }
 
 .article-body blockquote {
   margin: 1.8rem 0;
-  padding: 0.1rem 0 0.1rem 1.4rem;
+  padding: 0.8rem 1.2rem;
   border-left: 2px solid var(--accent);
-  color: var(--text-muted);
+  background: var(--accent-dim);
+  border-radius: 0 4px 4px 0;
+  color: var(--text);
   font-style: italic;
 }
 
@@ -324,11 +358,12 @@ footer a:hover {
 
 .article-body code {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   background: var(--surface);
-  color: var(--text);
-  padding: 0.1rem 0.38rem;
+  color: var(--text-strong);
+  padding: 0.12rem 0.4rem;
   border-radius: 3px;
+  border: 1px solid var(--border);
 }
 
 .article-body pre {
@@ -342,6 +377,7 @@ footer a:hover {
 
 .article-body pre code {
   background: none;
+  border: none;
   padding: 0;
   font-size: 0.84rem;
   color: var(--text);
@@ -367,7 +403,7 @@ footer a:hover {
   gap: 1rem;
   padding: 2rem 0;
   border-top: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
 }
 
 .post-nav a {
@@ -376,9 +412,7 @@ footer a:hover {
   transition: color 0.15s;
 }
 
-.post-nav a:hover {
-  color: var(--text);
-}
+.post-nav a:hover { color: var(--text); }
 
 /* ===================================
    About page
@@ -419,18 +453,16 @@ footer a:hover {
   transition: color 0.15s;
 }
 
-.about-links a:hover {
-  color: var(--text);
-}
+.about-links a:hover { color: var(--text); }
 
 .btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   border-radius: 4px;
   transition: border-color 0.15s, color 0.15s;
 }
@@ -451,20 +483,15 @@ footer a:hover {
     padding: 0 18px;
   }
 
-  nav {
-    padding: 1.5rem 0 1.2rem;
-  }
-
-  .nav-links {
-    gap: 1.25rem;
-  }
+  nav { padding: 1.5rem 0 1.2rem; }
+  .nav-links { gap: 1.25rem; }
 
   .note-row {
-    grid-template-columns: 84px 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
   }
 
-  .article-header {
-    padding: 2rem 0 1.5rem;
-  }
+  .note-date { padding-top: 0; }
+
+  .article-header { padding: 2rem 0 1.5rem; }
 }
