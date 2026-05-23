@@ -4,25 +4,33 @@ title: À propos
 permalink: /about/
 ---
 
-<section class="container-narrow" style="padding-top:6rem">
-  <h1>À propos</h1>
+<div class="about-page">
+  <h1>El-Fadel Bonfoh</h1>
+
   <p>
-    Architecte DevOps senior, je conçois et opère des plateformes CI/CD,
-    Kubernetes et cloud pour des environnements à forte exigence —
-    défense, aérospatial, secteur public.
+    Architecte DevOps chez Dassault Systèmes depuis début 2025.
+    Avant ça : Cloud DevOps Engineer chez Ericsson sur des projets télécom cloud (2022–2025),
+    puis Ingénieur R&D chez Orange Labs sur les environnements NFV/Cloud (2021).
+    PhD + Ingénieur d'État. Certifié AWS DevOps Professional et PMP.
   </p>
+
   <p>
-    Mon approche : allier rigueur industrielle et pragmatisme
-    d'ingénierie pour livrer des socles fiables, observables et
-    maintenables à long terme.
+    Ce qui m'intéresse : concevoir les systèmes qui permettent aux équipes de livrer des logiciels
+    de façon fiable, traçable et soutenable. CI/CD, Kubernetes, DevSecOps, observabilité,
+    gouvernance de delivery — sur des contextes à fort enjeu : télécom, SaaS industriel, IA/ML.
   </p>
+
   <p>
-    Je partage ici des notes d'architecture, des retours d'expérience et
-    des analyses sur les sujets qui structurent le métier : pipelines
-    auditables, GitOps, observabilité, gouvernance cloud et IA
-    appliquée.
+    Ce site est un carnet de travail rendu public. J'y documente ce que j'apprends, ce que j'observe
+    sur le terrain, et les sujets sur lesquels j'ai des convictions. Moins un blog qu'un espace
+    de pensée ouvert.
   </p>
-  <p style="margin-top:2rem">
-    <a href="{{ '/assets/CV_Bonfoh.pdf' | relative_url }}" class="btn">Télécharger mon CV</a>
-  </p>
-</section>
+
+  <hr>
+
+  <div class="about-links">
+    <a href="https://linkedin.com/in/elfadel" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:bonfohelfadel@gmail.com">bonfohelfadel@gmail.com</a>
+    <a href="{{ '/assets/CV_Bonfoh.pdf' | relative_url }}" class="btn">Télécharger le CV</a>
+  </div>
+</div>

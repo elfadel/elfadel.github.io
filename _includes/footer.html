@@ -1,9 +1,5 @@
 <footer>
-  <div class="container">
-    {% if page.lang == 'en' %}
-    El-Fadel Bonfoh portfolio · DevOps Architect · Cloud, CI/CD, DevSecOps, observability, and critical platforms.
-    {% else %}
-    Portfolio d'El-Fadel Bonfoh · Architecte DevOps · Cloud, CI/CD, DevSecOps, observabilité et plateformes critiques.
-    {% endif %}
-  </div>
+  <a href="{{ '/' | relative_url }}">El-Fadel Bonfoh</a> &middot;
+  <a href="{{ '/about/' | relative_url }}">À propos</a> &middot;
+  <a href="/feed.xml">RSS</a>
 </footer>

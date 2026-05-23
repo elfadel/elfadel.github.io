@@ -1,7 +1,6 @@
-title: El-Fadel Bonfoh · Architecte DevOps
+title: El-Fadel Bonfoh
 description: >-
-  Architecte DevOps senior — CI/CD, Kubernetes, DevSecOps, AWS,
-  observabilité et architectures cloud pour environnements critiques.
+  Notes sur l'architecture DevOps, la livraison logicielle et le cloud.
 baseurl: ""
 url: "https://elfadel.github.io"
 lang: fr
@@ -16,9 +15,6 @@ markdown: kramdown
 include:
   - _pages
 
-sass:
-  sass_dir: _sass
-  style: compressed
 
 plugins:
   - jekyll-feed
