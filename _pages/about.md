@@ -8,16 +8,15 @@ permalink: /about/
   <h1>El-Fadel Bonfoh</h1>
 
   <p>
-    Architecte DevOps chez Dassault Systèmes depuis début 2025.
-    Avant ça : Cloud DevOps Engineer chez Ericsson sur des projets télécom cloud (2022–2025),
-    puis Ingénieur R&D chez Orange Labs sur les environnements NFV/Cloud (2021).
-    PhD + Ingénieur d'État. Certifié AWS DevOps Professional et PMP.
+    Je m’appelle El-Fadel. Après cette présentation, je vous laisse choisir/dire quel métier/rôle j’exerce dans ma vie. DevOps, Software Developer, Architect, etc.
   </p>
 
   <p>
-    Ce qui m'intéresse : concevoir les systèmes qui permettent aux équipes de livrer des logiciels
-    de façon fiable, traçable et soutenable. CI/CD, Kubernetes, DevSecOps, observabilité,
-    gouvernance de delivery — sur des contextes à fort enjeu : télécom, SaaS industriel, IA/ML.
+    Je suis également titulaire d'un doctorat en réseaux informatiques et systèmes distribués à l'Institut National des Sciences Appliquées de Toulouse. J'ai mené des recherches sur la virtualisation, les protocoles TCP/IP, et le développement du noyau Linux.
+  </p>
+
+  <p>
+    Passionné par les technologies tournant autour du Cloud, j'ai acquis des compétences avancées en architecture cloud et en automatisation des infrastructures par l’usage des outils GitOps et DevOps. J'ai obtenu les certifications AWS DevOps Engineer – Professional et Project Management Professional (PMP)®, qui attestent de mon expertise et de ma rigueur. J'aime aussi partager mes connaissances et mon expérience en tant que formateur IT et mentor.
   </p>
 
   <p>
