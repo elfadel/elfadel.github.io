@@ -4,25 +4,23 @@ layout: default
 
 <div class="home-intro">
   <span class="intro-name">El-Fadel Bonfoh</span>
-  <p class="intro-bio">
-    Architecte DevOps. Je publie ici des notes sur la livraison logicielle,
-    les plateformes cloud et les pratiques qui tiennent en production.
+  <p class="intro-tagline">
+    Comprendre, construire, partager, <em>itérer</em>.
   </p>
 </div>
 
-<div class="notes-list">
-  <div class="notes-list-header">Notes</div>
-  {% for post in site.posts %}
-  <a class="note-row" href="{{ post.url | relative_url }}">
-    <span class="note-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-    <span class="note-content">
-      <span class="note-title">{{ post.title }}</span>
-      {% if post.tags.size > 0 %}
-      <span class="note-tags">
-        {% for tag in post.tags %}<span class="note-tag">{{ tag }}</span>{% endfor %}
-      </span>
-      {% endif %}
+<div class="notes-list-header">Notes</div>
+
+{% for post in site.posts %}
+<a class="note-item" href="{{ post.url | relative_url }}">
+  <div class="note-item-meta">
+    <span class="note-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    {% if post.tags.size > 0 %}
+    <span class="note-item-tags">
+      {% for tag in post.tags %}<span class="note-tag">#{{ tag | downcase }}</span>{% endfor %}
     </span>
-  </a>
-  {% endfor %}
-</div>
+    {% endif %}
+  </div>
+  <div class="note-title">{{ post.title }}</div>
+</a>
+{% endfor %}
